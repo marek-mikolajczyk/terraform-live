@@ -1,7 +1,10 @@
+/*
 output "instance_ip" {
-	value = module.webserver_cluster
+	value = module.webserver_cluster_[*]
 	description = "The public IP address of the web server"
 }
+
+*/
 
 /*
 output "instance_name" {

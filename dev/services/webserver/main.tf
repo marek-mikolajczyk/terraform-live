@@ -14,17 +14,21 @@ terraform {
 
 
 
-module "webserver_cluster_10" {
-	source = "github.com/marek-mikolajczyk/terraform-modules//services/webserver?ref=0.1.0"
+module "webserver_cluster_12" {
+	source = "github.com/marek-mikolajczyk/terraform-modules//services/webserver?ref=v0.1"
+
+	server_name	= "stgserver"
 
 	server_port	= 8080
-	server_env	= "DEV"
+	server_env	= "STG"
 }
 
 
 module "webserver_cluster_11" {
-	source = "github.com/marek-mikolajczyk/terraform-modules//services/webserver?ref=0.1.1"
+	source = "github.com/marek-mikolajczyk/terraform-modules//services/webserver?ref=v0.2"
 	# source = "../../../../terraform-modules/services/webserver/"
+
+	server_name	= "devserver"
 
 	server_port	= 8080
 	server_env	= "DEV"
